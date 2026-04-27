@@ -7,6 +7,9 @@ class User{
     }
     public function create_user($name,$email,$password,$role_id){
         $password=password_hash($password,PASSWORD_DEFAULT);
-    }
+        $sql="INSERT INTO users(name,email,password,role_id,status) VALUES('$name','$email',$password',$role_id','active')";
+        return $this->db->query($sql);
     
+        }
 }
+?>
